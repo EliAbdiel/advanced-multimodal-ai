@@ -213,8 +213,9 @@ async def chat_conversation(user_message: cl.Message) -> None:
 async def youtube_transcription(user_message: cl.Message) -> None:
     """Handle YouTube video transcription workflow."""
     await cl.Message(content="Transcribe YouTube video Selected!\nPlease hold on while I work on it!").send()
-    transcript = await youtube_transcribe(user_message=user_message.content)
-    await cl.Message(content=transcript).send()
+    transcript, url = await youtube_transcribe(user_message=user_message.content)
+    youtube = cl.Video(name="YouTube Video", url=url)
+    await cl.Message(content=transcript, elements=[youtube]).send()
 
 @traceable
 async def chain_conversation(user_message: cl.Message, chain) -> None:

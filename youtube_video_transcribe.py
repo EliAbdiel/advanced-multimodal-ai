@@ -74,7 +74,7 @@ async def safe_json_loads(text):
 PROMPT = generate_youtube_transcribe_prompt()
 
 @traceable
-async def youtube_transcribe(user_message: str) -> str:
+async def youtube_transcribe(user_message: str):
     """
     This function takes a YouTube video URL as input and uses the Gemini model to:
     1. Transcribe the audio content from the video
@@ -114,7 +114,7 @@ async def youtube_transcribe(user_message: str) -> str:
             print("\nYouTube Transcription Metadata:")
             print(response.usage_metadata)
         
-        return response.text
+        return response.text, url
 
     except Exception as e:
         print(f"An error occurred while processing the YouTube video: {e}")
