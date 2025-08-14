@@ -58,12 +58,12 @@ cover/
 # Chainlit Project Files Ignore
 .chainlit/
 .files/
+.qodo/
 chainlit.md
 img/
 test/
-extracted_data/
 generated_audio/
-generated_images/
+new_files_structure.md
 gemini_test.py
 openai_test.py
 scrape_test.py

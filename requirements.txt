@@ -10,6 +10,7 @@ google-genai
 python-dotenv
 langchain
 langsmith
+langgraph
 langchain-core
 langchain-community
 langchain-tavily

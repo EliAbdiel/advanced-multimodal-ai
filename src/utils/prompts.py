@@ -54,7 +54,6 @@ def generate_webpage_summary_template():
 #   if the question cannot be answered using the text, simply summarize the text. Include all factual information, numbers, stats, etc.
 # """
 
-
 def generate_search_queries_prompt():
     return '''Generate exactly 3 Google search queries to search online that form an objective opinion from the following task: "{question}".
             Include specific details such as locations, names, etc.
@@ -69,7 +68,6 @@ def generate_search_queries_prompt():
 #   return 'Generate exactly 3 google search queries to search online that form an objective opinion from the following task: "{question}"' \
 #           'Also include in the queries specified task details such as locations, names, etc.\n' \
 #           'You must respond with a list of search queries strictly in the following format: ["query 1", "query 2", "query 3"].'
-
 
 def generate_research_report_prompt():
     return (
@@ -115,3 +113,9 @@ def generate_research_report_prompt():
 #           relevant results that answer the query accurately. Place these citations at the end \
 #           of the sentence or paragraph that reference them.\n"\
 #           "Please do your best, this is very important to my career."
+
+def generate_critical_thinker_prompt():
+    return (
+        "You are an AI critical thinker research assistant. Your sole purpose is to write well written, "
+        "critically acclaimed, objective and structured reports on given text."
+    )
