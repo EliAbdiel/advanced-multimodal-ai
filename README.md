@@ -5,14 +5,14 @@
 | Feature                          | Feature                          |
 |:--------------------------------:|:--------------------------------:|
 | **User Authentication**          | **Dashboard Overview**           |
-| ![Login](public/screenshots/assistant-login.png) | ![Home Page](public/screenshots/assistant-home.png) |
+| ![Login](public/gifs/login.gif) | ![Home Page](public/gifs/dashboard.gif) |
 | **Custom Command Configuration** | **AI Image Generation**          |
-| ![Commands](public/screenshots/assistant-commands.png) | ![Image Generation](public/screenshots/assistant-image-generation.png) |
+| ![Commands](public/gifs/command.gif) | ![Image Generation](public/gifs/img-gen.gif) |
 | **Web Content Extraction**       | **Document Intelligence**        |
-| ![Web Scraping](public/screenshots/assistant-scrape-link.png) | ![PDF Q&A](public/screenshots/assistant-question-answer-pdf.png) |
+| ![Web Scraping](public/gifs/scrape.gif) | ![PDF Q&A](public/gifs/files.gif) |
 | **Advanced Research**            | **Report Generation**            |
-| ![Deep Search](public/screenshots/assistant-deep-search-copy.png) | ![PDF Report](public/screenshots/assistant-deep-search-pdf.png) |
+| ![Deep Search](public/gifs/search.gif) | ![PDF Report](public/gifs/pdf.gif) |
 | **Interactive Chat**             | **Media Processing**             |
-| ![Conversational AI](public/screenshots/assistant-conversational-ai.png) | ![Video Transcripts](public/screenshots/assistant-youtube-video.png) |
+| ![Conversational AI](public/gifs/chat.gif) | ![Video Transcripts](public/gifs/youtube.gif) |
 | **Visual Analysis**              | **Audio Comprehension**          |
-| ![Image Understanding](public/screenshots/assistant-image-understand.png) | ![Audio Understanding](public/screenshots/assistant-audio-understand.png) |
+| ![Image Understanding](public/gifs/img-understand.gif) | ![Audio Understanding](public/gifs/audio.gif) |

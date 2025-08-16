@@ -64,6 +64,7 @@ img/
 test/
 generated_audio/
 new_files_structure.md
+queries.txt
 gemini_test.py
 openai_test.py
 scrape_test.py
