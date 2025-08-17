@@ -5,6 +5,7 @@ from src.agents.link_scraping import scrape_link
 from src.agents.deep_search import deep_research_report
 from src.agents.conversational_ai import general_question_answer
 from src.agents.youtube_transcription import youtube_transcribe
+from src.agents.code_execution import code_generation
 
 
 async def get_agent_tools() -> list:
@@ -12,6 +13,7 @@ async def get_agent_tools() -> list:
         generate_image,
         scrape_link,
         deep_research_report,
+        code_generation,
         general_question_answer,
         youtube_transcribe
     ]
