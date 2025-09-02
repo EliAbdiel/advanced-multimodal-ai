@@ -18,6 +18,8 @@ langchain-chroma
 langchain-openai
 langchain-ollama
 langchain-google-genai
+langgraph-checkpoint-postgres
+psycopg
 PyPDF2
 python-docx
 pillow
