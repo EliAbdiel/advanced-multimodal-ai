@@ -7,7 +7,9 @@ from .config import (
 )
 from .config import (
     OPENROUTER_KEY,
+    OPENROUTER_KEY_V2,
     OPENROUTER_MODEL,
+    OPENROUTER_CODER,
     OPENROUTER_URL,
 )
 from langchain_core.rate_limiters import InMemoryRateLimiter
@@ -55,6 +57,19 @@ async def get_openrouter_llm() -> ChatOpenAI:
         model=OPENROUTER_MODEL,
         rate_limiter=rate_limiter,
         api_key=OPENROUTER_KEY,
+        base_url=OPENROUTER_URL,
+    )
+    # print(f"\nOpenrouter LLM type: {type(llm)}\n")
+    return llm
+
+async def get_llm_coder() -> ChatOpenAI:
+    """
+    Initializes and returns an OpenRouter LLM coder instance with configured settings.
+    """
+    llm = ChatOpenAI(
+        model=OPENROUTER_CODER,
+        rate_limiter=rate_limiter,
+        api_key=OPENROUTER_KEY_V2,
         base_url=OPENROUTER_URL,
     )
     # print(f"\nOpenrouter LLM type: {type(llm)}\n")
