@@ -1,6 +1,7 @@
 import asyncio
 import platform
 
+from contextlib import asynccontextmanager
 from langgraph.prebuilt import ToolNode
 from langgraph.graph import MessagesState
 # from langgraph.checkpoint.memory import InMemorySaver
@@ -39,24 +40,18 @@ async def _build_base_graph():
 
     return builder
 
-async def memory_saver():
-    """Set up a PostgreSQL memory saver for persistent conversation history.
-    
-    Returns:
-        AsyncPostgresSaver: Configured PostgreSQL checkpointer for storing conversation state.
-    """
-    async with AsyncPostgresSaver.from_conn_string(MEMORY_DATABASE) as checkpointer:
-        return await checkpointer.setup()
-
+@asynccontextmanager
 async def build_graph():
     """Build and return the agent workflow graph with memory."""
     # use persistent memory to save conversation history
     # TODO: be compatible with SQLite / PostgreSQL
-    checkpointer = await memory_saver()
-
     # checkpointer = InMemorySaver()
+    async with AsyncPostgresSaver.from_conn_string(MEMORY_DATABASE) as checkpointer:
+        # await checkpointer.setup()
 
-    # build state graph
-    builder = await _build_base_graph()
+        # build state graph
+        builder = await _build_base_graph()
     
-    return builder.compile(checkpointer=checkpointer)
+        graph = builder.compile(checkpointer=checkpointer)
+
+        yield graph
