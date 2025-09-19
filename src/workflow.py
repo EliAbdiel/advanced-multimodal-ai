@@ -55,10 +55,10 @@ async def run_agent_workflow(user_message: cl.Message):
                 youtube = cl.Video(name="YouTube Video", url=content[1])
                 await cl.Message(content=content[0], elements=[youtube]).send()
 
-            elif result["messages"][-1].name == "generate_video":
-                video_path = result["messages"][-1].content
-                video = cl.Video(name="Generated Video", path=str(video_path))
-                await cl.Message(content="Here's the generated video!", elements=[video]).send()
+            # elif result["messages"][-1].name == "generate_video":
+            #     video_path = result["messages"][-1].content
+            #     video = cl.Video(name="Generated Video", path=str(video_path))
+            #     await cl.Message(content="Here's the generated video!", elements=[video]).send()
             
             else:
                 await cl.Message(content=result["messages"][-1].content, elements=[]).send()

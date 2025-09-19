@@ -1,4 +1,6 @@
 import chainlit as cl
+
+from mcp import ClientSession
 from typing import Dict, Optional
 from chainlit.types import ThreadDict
 from src.ui.starters import select_starter
@@ -80,6 +82,22 @@ async def on_audio_end() -> None:
     voice responses depending on attached file types and user intents.
     """
     await run_audio_workflow()
+
+@cl.on_mcp_connect
+async def on_mcp_connect(connection, session: ClientSession):
+    """Called when an MCP connection is established"""
+    # Your connection initialization code here
+    # This handler is required for MCP to work
+    # TODO: implement connection logic
+    pass
+    
+@cl.on_mcp_disconnect
+async def on_mcp_disconnect(name: str, session: ClientSession):
+    """Called when an MCP connection is terminated"""
+    # Your cleanup code here
+    # This handler is optional
+    # TODO: implement disconnection logic
+    pass
 
 @cl.on_message
 async def on_message(user_message: cl.Message) -> None:

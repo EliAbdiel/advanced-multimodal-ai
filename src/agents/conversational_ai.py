@@ -1,10 +1,12 @@
+import chainlit as cl
 from src.utils.llm_setup import get_openrouter_llm
 from langchain_core.tools import tool
 
 @tool
 async def general_question_answer(user_message: str):
     """
-    General-purpose question answering using OpenRouter's language models.
+    Answers a variety of user questions. Use this for general knowledge queries, 
+    simple factual lookups, and conceptual explanations.
     
     This tool provides:
     - Direct access to advanced LLMs via OpenRouter
@@ -45,6 +47,8 @@ async def general_question_answer(user_message: str):
     Input: "Explain quantum entanglement in simple terms"
     Output: "Quantum entanglement is a phenomenon where two particles..."
     """
+    await cl.Message(content="Conversational AI Selected!\nPlease wait while I work on it!").send()
+
     model = await get_openrouter_llm()
     response = await model.ainvoke(user_message)
     return response.content
